@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#181c22"><title>Terraclast Strategy Map</title>
+<meta name="theme-color" content="#181c22"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0d1210"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Terraclast"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><title>Terraclast Strategy Map</title>
 <style>/* required styles */
 
 .leaflet-pane,
@@ -766,6 +766,15 @@ ol li::marker{color:var(--gold);font-weight:700}
 @media(min-width:700px){#panel{width:400px}}
 body.pnl #buddy,body.pnl #tagBtn{display:none!important}
 .leaflet-tile-pane{filter:saturate(1.1)}
+.legend{background:#121915ee;border:1px solid #2a3631;border-radius:12px;padding:6px;box-shadow:0 6px 20px #0009;font-size:12px;max-width:130px}.legend .lgm{min-height:34px!important;font-size:12px!important;width:100%;padding:2px 6px!important;margin:0 0 4px!important}.legend div{display:flex;align-items:center;gap:6px;padding:4px 2px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#e7ece9}.legend div.off{opacity:.35}.legend span{width:12px;height:12px;border-radius:3px;flex:none;border:1px solid #fff6}
+.incg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}.incg label{flex-direction:column;gap:2px;font-size:18px;min-height:0}.incg input{width:100%!important;min-width:0!important;text-align:center;margin:0!important;padding:4px!important}
+.incrow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.incrow span,.tag{border:1px solid;border-radius:999px;padding:2px 9px;font-weight:700;font-size:12px;white-space:nowrap}
+.role{font-size:11px;background:#fbbf2422;color:#fbbf24;border:1px solid #fbbf2466;border-radius:999px;padding:1px 8px;vertical-align:middle}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px 0}.stats div{background:#1b2420;border-radius:10px;padding:6px 2px;text-align:center}.stats b{display:block;font-size:16px;color:#fbbf24}.stats small{font-size:11px}
+.pcard details summary,.hubd summary{padding:10px 0;color:#10b981;font-weight:700;cursor:pointer}.trow{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:8px 0;border-top:1px solid #2a3631;align-items:center}.trow small{grid-column:1}.trow button{grid-row:1/3;grid-column:2;min-height:40px!important}
+.nextc{border-color:#fbbf2488!important;background:linear-gradient(180deg,#1d2a1f,#151c19)!important}.nextc>div{margin-top:8px;line-height:1.45}.nextc a{color:#fbbf24}
+.hubd{background:#151c19;border:1px solid #2a3631;border-radius:14px;margin:8px 0;padding:0 14px;box-shadow:0 3px 12px #0006}.hubd summary{font-size:16px;padding:16px 0;list-style:none}.hubd summary::-webkit-details-marker{display:none}.hubd>div{padding-bottom:12px}
+.guide h4{margin:14px 0 4px;color:#fbbf24}.guide p{margin:4px 0;line-height:1.5;color:#d6ddd9}.opc.past{opacity:.5}.sm{min-height:34px!important;font-size:13px!important;float:right}code{color:#fbbf24}
 </style><script>/* @preserve
  * Leaflet 1.9.4, a JS library for interactive maps. https://leafletjs.com
  * (c) 2010-2023 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -799,7 +808,7 @@ body.pnl #buddy,body.pnl #tagBtn{display:none!important}
 <div id="panel">
 <div class="row" style="justify-content:space-between;padding-right:96px"><b>Terraclast Strategy Map</b><label><input type="checkbox" id="advT"> Advanced</label></div>
 <div id="tabs">
-<button data-t="tools" style="background:#15803d">🧰 Tools</button><button data-t="help">❓ Help</button><button data-t="players">👥 Players</button><button data-t="route">🚗 Route</button>
+<button data-t="tools" style="background:#15803d">🧰 Tools</button><button data-t="board">🏆 Board</button><button data-t="hub">📚 Hub</button><button data-t="help">❓ Help</button><button data-t="players">👥 Players</button><button data-t="route">🚗 Route</button>
 <button data-t="attack" class="adv">⚔️ Attack</button><button data-t="upkeep" class="adv">🍖 Upkeep</button><button data-t="mapt">⚙️ Settings</button>
 <button data-t="log" class="adv">📜 Log</button><button data-t="share">💾 Share</button></div>
 
@@ -826,6 +835,33 @@ body.pnl #buddy,body.pnl #tagBtn{display:none!important}
 <table id="lvT"></table><div class="row"><button id="lvReset">Reset to estimates</button></div></div></details>
 </div>
 
+<div class="tab" id="t-board"><h3>🏆 Alliance board</h3><div class="row"><select id="bMe" style="flex:1"></select><button id="bExp" style="background:#16a34a">📤 Send my update</button></div><div id="bNext"></div><div id="bCards"></div></div>
+<div class="tab" id="t-hub"><h3>📚 Alliance hub</h3><small id="hPlan"></small>
+<div class="row" style="margin:8px 0"><button id="hDis" style="flex:1;background:#5865F2;border-color:#8b95ff!important">💬 Join our Discord</button></div>
+<details class="hubd"><summary>📤 How to send your update</summary><div><ol>
+<li>🏆 <b>Board</b>: pick <b>who you are</b>.</li><li>👥 <b>Players</b>: type your <b>green +/day</b> income (wood, food, water, scrap). Plan or tag your towers on the map.</li>
+<li>Tap <b>📤 Send my update</b>. On iPhone the share sheet opens: pick <b>Discord</b> and post it in <b>#🗺️-map-link</b> (or save the file and attach it there).</li>
+<li>Jacob merges everyone's files and uploads <code>plan.json</code>. Next time you open the map it loads the new plan by itself, and your own edits stay.</li></ol>
+<div class="row"><button id="hExp" style="flex:1;background:#16a34a">📤 Send my update now</button></div></div></details>
+<details class="hubd"><summary>📅 Ops board (runs, targets, builds)</summary><div><div id="oL"></div>
+<div class="row"><input id="oT" placeholder="What (e.g. Sat I-90 run)" style="flex:1"></div>
+<div class="row"><select id="oY"><option value="run">🚗 Run</option><option value="target">🎯 Target</option><option value="build">🏗️ Build</option><option value="meet">🔊 Meet</option></select><input id="oD" type="date" style="flex:1"></div>
+<div class="row"><input id="oN" placeholder="Note (who, where)" style="flex:1"><button id="oAdd" style="background:#16a34a">+ Add</button></div>
+<small>Ops ride along in Send my update / Export, and in plan.json.</small></div></details>
+<details class="hubd"><summary>📍 Resource spot directory</summary><div><div class="row"><select id="sT" style="flex:1"><option value="">All types</option><option>Wood</option><option>Food</option><option>Water</option><option>Scrap</option><option value="star">⭐ Good spots</option></select><select id="sR" style="flex:1"><option value="">Any rarity</option><option>common</option><option>rare</option><option>epic</option></select></div><small id="sN"></small><div id="sL"></div></div></details>
+<details class="hubd"><summary>📖 Game guide (official facts)</summary><div class="guide">
+<p><small>From the official Terraclast Discord <b>#how-to-play</b> (Aug 2026). <span class="est">Yellow = our estimate.</span></small></p>
+<h4>🗺️ Tiles</h4><p>Hexes about 170 m per side, on OpenStreetMap. You claim tiles automatically by moving with GPS (walk, drive, transit). Ownership is weak: anyone passing takes the tile. Only a <b>tower</b> holds it.</p>
+<h4>🌲 Resources</h4><p><span class="tag pill-wood">🪵 Wood</span> parks, forests, meadows · <span class="tag pill-food">🍖 Food</span> restaurants, food shops · <span class="tag pill-water">💧 Water</span> rivers, lakes, wetlands · <span class="tag pill-scrap">🔩 Scrap</span> industrial, commercial, offices. One resource per tile; 40–60% of tiles have none. Rarity common / rare / epic changes yield.</p>
+<h4>🏠 Base</h4><p>Free and can't be destroyed. Moving it has a 6 h cooldown. Gives +1/day of each resource at L1, up to +6/day at L10 <span class="est">(levels between are estimates)</span>.</p>
+<h4>🏰 Towers</h4><p>Build: <b>10 wood</b>. Levels 1–10. Attack = defense: <b>10 at L1, 155 at L10</b>. Daily upkeep food/water <b>1/1 at L1, 12/8 at L10</b>. Miss upkeep once = defense halved; twice in a row = destroyed. Upgrades cost mostly wood + scrap, about 2x per level <span class="est">(exact costs unknown, see ⚙️ Numbers in Tools)</span>. While it stands, outsiders get no income from the tile and can't take it.</p>
+<h4>⚔️ Attacks</h4><p>Only other players' towers, never bases. Win if your attack &gt; their defense: you take the tower and tile. Lose and you drop by (their attack − your defense) defense, if positive.</p>
+<h4>🤝 Alliances</h4><p>Members never attack or block each other. An ally visiting your tower's tile gets the same income you do; the alliance can't capture your land.</p>
+<h4>📡 Radar & POIs</h4><p>Radar: 15 min, shows hidden treasure within 1 km and nearby players' tiles; 1 h cooldown. Treasure POI = one-time reward. Event POI = visit, get a task, get a reward (often must be within ~200 m).</p>
+<h4>🔁 Exchange</h4><p>No player trading. Fixed rate after an ad: 2 of any → 1 scrap, or 1 scrap → 2 of another.</p>
+<h4>🔮 Coming (roadmap)</h4><p>Karma (Light/Dark), bosses, bunkers, Rebuild The Network, seasonal reset idea. Shield timers: not announced.</p></div></details>
+<details class="hubd"><summary>📲 Install on your iPhone</summary><div><ol><li>Open this page in <b>Safari</b>.</li><li>Tap <b>Share</b> (square with arrow) → <b>Add to Home Screen</b>.</li><li>It opens like an app with our logo, and works offline after the first visit (map tiles need signal).</li></ol></div></details>
+</div>
 <div class="tab" id="t-help"><h3>How to use (7 steps)</h3><ol>
 <li><b>🧰 Tools</b> (first tab): upkeep check, Today's run, attack check, upgrade planner, and editable game numbers.</li><li><b>Add your people</b> in 👥 Players (name + color). Jacob and Wife are already there; rename them.</li>
 <li><b>Zoom in</b> (or use the jump buttons) until you see the hex grid, then <b>tap a hex</b> to plan a tower. Planned = gray, Live = your color.</li>
@@ -839,7 +875,7 @@ body.pnl #buddy,body.pnl #tagBtn{display:none!important}
 <h3>Jump to</h3><div class="row jumps"></div></div>
 
 <div class="tab" id="t-players"><h3>Jump to</h3><div class="row jumps"></div>
-<h3>Players</h3><div id="players"></div>
+<h3>Players</h3><div id="players"></div><h3>Roles + daily income (green +/day)</h3><small>Not what you have stored: the green per-day number in the game. Shared in Send my update and plan.json.</small><div id="incEd"></div>
 <div class="row"><input id="newP" placeholder="New player name" style="flex:1"><button id="addP">+ Add</button></div>
 <h3>Show</h3>
 <label><input type="checkbox" id="fPl" checked> Planned</label><label><input type="checkbox" id="fLv" checked> Live</label>
@@ -908,7 +944,7 @@ body.pnl #buddy,body.pnl #tagBtn{display:none!important}
 <div id="wE"><label><input type="checkbox" id="dTg"> 🎯 Target</label>Ally hitting it<input id="dA"><div id="dCan"></div></div>
 <div id="wP">Expires<input type="date" id="dX2"></div>
 <div>Note<input id="dN"></div>
-<div class="row"><button id="dSave" style="background:#16a34a">Save</button><button id="dTog">Toggle Live</button><button id="dLost" class="adv">Lost</button><button id="dDel" class="warn">Delete</button><button id="dTim">⏱️ Timer</button><button id="dX">Cancel</button></div></div>
+<div class="row"><button id="dSave" style="background:#16a34a">Save</button><button id="dTog">Toggle Live</button><button id="dLost" class="adv">Lost</button><button id="dNav">🧭 Maps</button><button id="dLink">🔗 Link</button><button id="dDel" class="warn">Delete</button><button id="dTim">⏱️ Timer</button><button id="dX">Cancel</button></div></div>
 
 <script>const KEY='terraclast-map-v1',R=6371000,LAT0=47.73,LNG0=-117.15,cosL=Math.cos(LAT0*Math.PI/180);
 const $=id=>document.getElementById(id);
@@ -993,7 +1029,7 @@ function render(){towL.clearLayers();resL.clearLayers();zoneL.clearLayers();cons
    pg.bindTooltip(en?`ENEMY${t.level?' L'+t.level+' def '+defTxt(t.level):''}${t.target?' 🎯'+(t.attacker?' '+esc(t.attacker):''):''} ${canTake(t).txt}${t.note?' – '+esc(t.note):''}`:`⭐ ${esc(t.note||'POI')}${t.expiry?' (until '+t.expiry+')':''}`);
    pg.on('click',e=>{L.DomEvent.stop(e);onTap(e.latlng,t)});
    L.marker(cLL(t),{interactive:false,icon:icon(en?(t.target?'🎯':'')+(t.level||'?'):'🎁')}).addTo(towL);return}
-  const pl=P(t.owner);if(!pl.show)return;if(t.status==='Planned'&&!S.fP)return;if(t.status==='Live'&&!S.fL)return;
+  const pl=P(t.owner);if(!pl.show)return;if(S.set.justMe&&S.set.me&&t.owner!==S.set.me)return;if(t.status==='Planned'&&!S.fP)return;if(t.status==='Live'&&!S.fL)return;
   const live=t.status==='Live',bad=out.has(t.id);
   const poly=L.polygon(hexPoly(t.q,t.r),{color:picked?'#3b82f6':bad?'#ff3b3b':pl.color,weight:picked||bad?4:2,fillColor:live?pl.color:'#9ca3af',fillOpacity:live?.6:.35,dashArray:live?null:'6 4'}).addTo(towL);
   poly.bindTooltip(`${esc(pl.name)} L${t.level}${t.tlevel>t.level?'→'+t.tlevel:''} def ${defTxt(t.level)} ${t.status}${t.note?' – '+esc(t.note):''}${bad?' ⚠ too close':''}`);
@@ -1172,7 +1208,7 @@ function exportObj(){const w=o=>{const[lat,lng]=cLL(o);return{...o,lat:+lat.toFi
  return{app:'terraclast-map',v:2,exported:new Date().toISOString(),players:S.players,towers:S.towers.map(w),resources:S.resources.map(w),zones:S.zones,log:S.log,grid:S.grid,discord:S.set.discord||''}}
 function importData(d,m){if(d.discord&&/^https:\/\//.test(d.discord)&&(m==='replace'||!S.set.discord))S.set.discord=d.discord;const fix=t=>{t={...t};if(t.lat!=null){[t.q,t.r]=hexAt(t.lat,t.lng)}delete t.lat;delete t.lng;return t};
  if(m==='replace'){S.players=d.players||[];S.towers=(d.towers||[]).map(fix);S.resources=(d.resources||[]).map(fix);S.zones=d.zones||[];S.log=d.log||[];return 0}
- const idMap={};(d.players||[]).forEach(p=>{const ex=S.players.find(q=>q.id===p.id||q.name.toLowerCase()===String(p.name).toLowerCase());if(ex)idMap[p.id]=ex.id;else{S.players.push({...p,show:true});idMap[p.id]=p.id}});
+ const idMap={};(d.players||[]).forEach(p=>{const ex=S.players.find(q=>q.id===p.id||q.name.toLowerCase()===String(p.name).toLowerCase());if(ex){idMap[p.id]=ex.id;if(p.upd&&(!ex.upd||p.upd>ex.upd)){if(p.inc)ex.inc=p.inc;ex.upd=p.upd}}else{S.players.push({...p,show:true});idMap[p.id]=p.id}});
  let n=0;(d.towers||[]).forEach(t=>{t=fix({...t,owner:idMap[t.owner]||t.owner});const i=S.towers.findIndex(x=>x.id===t.id);if(i>=0)S.towers[i]=t;else{S.towers.push(t);n++}});
  (d.resources||[]).forEach(x=>{x=fix(x);S.resources=S.resources.filter(y=>!(y.q===x.q&&y.r===x.r));S.resources.push(x)});
  (d.zones||[]).forEach(z=>{if(!S.zones.some(y=>y.id===z.id))S.zones.push(z)});
@@ -1341,5 +1377,95 @@ const _r=render;render=function(){_r.apply(this,arguments);try{all()}catch(e){co
  $('thm').onclick=()=>{const to=cur()?'Street':'Dark';Object.values(baseLayers).forEach(l=>map.removeLayer(l));baseLayers[to].addTo(map);localStorage.setItem(KEY+'-base',to);upd()};
  map.on('baselayerchange',upd);upd();
  document.querySelectorAll('#sheet .g button[data-r],#sheet .g button[data-k]').forEach(b=>b.classList.add('pill-'+(b.dataset.r||b.dataset.k).toLowerCase()));
+})();
+// ===== v7 alliance hub =====
+(()=>{const RK=['wood','food','water','scrap'],IC={wood:'🪵',food:'🍖',water:'💧',scrap:'🔩'};
+const DISCORD='https://discord.gg/yJyajnZdbb';if(!S.set.discord)S.set.discord=DISCORD;if(!Array.isArray(S.ops))S.ops=[];
+const inc=p=>{const i=p.inc||{};return RK.map(k=>Math.max(0,+i[k]||0))};
+const stamp=p=>{p.upd=new Date().toISOString()};
+const ago=s=>{if(!s)return'never';const m=(Date.now()-new Date(s))/60000;return m<60?Math.max(1,Math.round(m))+' min ago':m<1440?Math.round(m/60)+' h ago':Math.round(m/1440)+' d ago'};
+const nm=t=>esc((t.note||'').replace(/^(Master|Suggested): /,'').slice(0,28)||'tower');
+const myT=id=>S.towers.filter(t=>K(t)==='tower'&&t.owner===id);
+const upk=id=>myT(id).filter(t=>t.status==='Live').reduce((a,t)=>{const u=UP(t.level||1);return[a[0]+u[0],a[1]+u[1]]},[0,0]);
+function eta(p,from,to){const[w,,,s]=inc(p);const[cw,cs]=upgCost(from,to);if(!cw&&!cs)return 0;if((cw&&!w)||(cs&&!s))return Infinity;return Math.max(cw?Math.ceil(cw/w):0,cs?Math.ceil(cs/s):0)}
+const dTxt=d=>d===Infinity?'add income':d===0?'now':d+' day'+(d>1?'s':'');
+function next(p){let b=null;myT(p.id).forEach(t=>{const l=t.level||1;if(l>=10)return;const d=eta(p,l,l+1);if(!b||d<b.d||(d===b.d&&t.status==='Live'&&b.t.status!=='Live'))b={t,d}});return b}
+// legend
+const lg=L.control({position:'topleft'});lg.onAdd=()=>{const d=L.DomUtil.create('div','legend');L.DomEvent.disableClickPropagation(d);L.DomEvent.disableScrollPropagation(d);return d};lg.addTo(map);
+function legend(){const d=document.querySelector('.legend');if(!d)return;const me=S.set.me;
+ d.innerHTML=`<button class="lgm">${S.set.justMe?'👤 Just me':'👥 All players'}</button>`+S.players.map(p=>`<div data-p="${p.id}" class="${p.show&&!(S.set.justMe&&p.id!==me)?'':'off'}"><span style="background:${p.color}"></span>${esc(p.name)}${p.id===me?' ★':''}</div>`).join('');
+ d.querySelector('.lgm').onclick=e=>{L.DomEvent.stop(e);setTimeout(()=>{if(!S.set.me){toast('Pick who you are in 🏆 Board first');showTab('board');return}S.set.justMe=!S.set.justMe;save();render()},0)};
+ d.querySelectorAll('[data-p]').forEach(x=>x.onclick=e=>{L.DomEvent.stop(e);setTimeout(()=>{const p=P(x.dataset.p);p.show=!p.show;save();render()},0)})}
+// income + role editor (Players tab)
+function incEd(){const el=$('incEd');el.innerHTML='';S.players.forEach(p=>{const d=document.createElement('div');d.className='box';const v=inc(p);
+ d.innerHTML=`<div class="row" style="justify-content:space-between"><b style="color:${p.color}">${esc(p.name)}</b><small>updated ${ago(p.upd)}</small></div><div class="row">Role <select data-r>${['Member','Commander','Officer','Scout','Builder','Farmer'].map(r=>`<option${(p.role||'Member')===r?' selected':''}>${r}</option>`).join('')}</select></div><div class="incg">${RK.map((k,i)=>`<label>${IC[k]}<input type="number" min="0" inputmode="numeric" data-k="${k}" value="${v[i]||''}" placeholder="0"></label>`).join('')}</div>`;
+ d.querySelector('[data-r]').onchange=e=>{p.role=e.target.value;stamp(p);save();renderBoard()};
+ d.querySelectorAll('input').forEach(n=>n.onchange=()=>{p.inc=p.inc||{};p.inc[n.dataset.k]=Math.max(0,+n.value||0);stamp(p);save();renderBoard();d.querySelector('small').textContent='updated just now'});el.appendChild(d)})}
+// board
+function renderBoard(){const me=$('bMe'),v=S.set.me||'';me.innerHTML='<option value="">Who are you?</option>'+S.players.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');me.value=v;
+ const p=S.players.find(x=>x.id===S.set.me);let nx='<small>Pick who you are above to see your next move.</small>';
+ if(p){const[,f,wa]=inc(p),[uf,uw]=upk(p.id),it=[];
+  if(!p.inc)it.push('✏️ Add your green daily income in 👥 Players so ETAs work.');
+  else if(f<uf||wa<uw)it.push(`⚠️ Upkeep ${Math.round(uf)}🍖 ${Math.round(uw)}💧/day, income ${f}🍖 ${wa}💧. Grab food/water today.`);
+  const pl=myT(p.id).filter(t=>t.status==='Planned');if(pl.length)it.push(`🏗️ ${pl.length} planned tower(s) to build (10🪵 each). <a href="#" id="bRun">Plan today's run</a>`);
+  const n=next(p);if(n)it.push(`⬆️ Next upgrade: ${nm(n.t)} L${n.t.level||1}→${(n.t.level||1)+1} in <b>${dTxt(n.d)}</b>, defense → ${DEF((n.t.level||1)+1)}. <a href="#" data-go="${n.t.id}">Show</a>`);
+  const op=S.ops.filter(o=>!o.date||o.date>=new Date().toISOString().slice(0,10)).sort((a,b)=>(a.date||'').localeCompare(b.date||''))[0];if(op)it.push(`📅 Next op: ${esc(op.title)}${op.date?' ('+op.date+')':''}`);
+  nx=it.length?it.map(x=>`<div>${x}</div>`).join(''):'✅ All good. Go tag some tiles.'}
+ $('bNext').innerHTML=`<div class="box nextc"><b>👉 My next thing</b>${nx}</div>`;
+ const br=$('bRun');if(br)br.onclick=e=>{e.preventDefault();showTab('tools');$('xRun').open=true;$('nP').value=S.set.me};
+ $('bCards').innerHTML=S.players.map(p=>{const T=myT(p.id),lv=T.filter(t=>t.status==='Live'),[w,f,wa,s]=inc(p),[uf,uw]=upk(p.id),n=next(p),def=lv.reduce((a,t)=>a+DEF(t.level||1),0);
+  return `<div class="box pcard" style="border-left:5px solid ${p.color}!important"><div class="row" style="justify-content:space-between"><b style="font-size:17px">${esc(p.name)}${p.id===S.set.me?' ★':''} <span class="role">${esc(p.role||'Member')}</span></b><small>${ago(p.upd)}</small></div>
+  <div class="incrow">${RK.map((k,i)=>`<span class="pill-${k}">${IC[k]} +${[w,f,wa,s][i]}/d</span>`).join('')}</div>
+  <div class="stats"><div><b>${lv.length}</b><small>live</small></div><div><b>${T.length-lv.length}</b><small>planned</small></div><div><b>${def}</b><small>total def</small></div><div><b>${n?dTxt(n.d):'–'}</b><small>next upg</small></div></div>
+  <small>Upkeep ${Math.round(uf)}🍖 ${Math.round(uw)}💧/day${p.inc&&(f<uf||wa<uw)?' <span class="warn">short</span>':''}</small>
+  <details><summary>Towers (${T.length})</summary>${T.map(t=>{const l=t.level||1,tl=Math.max(l,t.tlevel||l);return `<div class="trow"><span>${t.status==='Live'?'🟢':'⚪'} L${l} ${nm(t)}</span><small>${l<10?`L${l+1} in ${dTxt(eta(p,l,l+1))} · att/def ${DEF(l+1)}`:'max'}${tl>l+1?` · L${tl} in ${dTxt(eta(p,l,tl))} · ${DEF(tl)}`:''}</small><button data-go="${t.id}">Go</button></div>`}).join('')||'<small>No towers</small>'}</details></div>`}).join('')+'<small class="est">ETA = wood+scrap upgrade cost (⚙️ Numbers, estimates) ÷ green daily income, one upgrade at a time. Attack = defense.</small>';
+ document.querySelectorAll('#t-board [data-go],#t-hub [data-go]').forEach(b=>b.onclick=e=>{e.preventDefault();focusT(b.dataset.go)})}
+$('bMe').onchange=()=>{S.set.me=$('bMe').value;save();render()};
+function focusT(id){const t=S.towers.find(x=>x.id===id);if(!t){toast('Tower not found');return}map.setView(cLL(t),16);hidePanelMobile();
+ const m=L.circleMarker(cLL(t),{radius:26,color:'#fbbf24',weight:4,fill:false}).addTo(map);setTimeout(()=>map.removeLayer(m),4000)}
+async function exportMine(){const p=S.players.find(x=>x.id===S.set.me);if(!p){toast('Pick who you are on 🏆 Board first');showTab('board');return}stamp(p);save();
+ const o=exportObj();o.players=[p];o.towers=o.towers.filter(t=>(t.kind||'tower')!=='tower'||t.owner===p.id);o.log=[];o.ops=(S.ops||[]).filter(x=>x.by===p.id);o.update=p.name;
+ const txt=JSON.stringify(o),name=`terraclast-${p.name.replace(/\W+/g,'-').toLowerCase()}-update.json`,f=new File([txt],name,{type:'application/json'});
+ try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'Terraclast update'});return}}catch(e){if(e.name==='AbortError')return}
+ const a=document.createElement('a');a.href=URL.createObjectURL(f);a.download=name;a.click();toast('Saved. Now post it in Discord 🗺️-map-link')}
+$('bExp').onclick=exportMine;$('hExp').onclick=exportMine;$('hDis').onclick=()=>window.open(S.set.discord||DISCORD,'_blank');
+// tower dialog
+$('dNav').onclick=()=>{if(!cur)return;const[a,o]=cLL(cur),ios=/iPhone|iPad|Macintosh/.test(navigator.userAgent);
+ window.open(ios?`https://maps.apple.com/?daddr=${a.toFixed(6)},${o.toFixed(6)}&dirflg=d`:`https://www.google.com/maps/dir/?api=1&destination=${a.toFixed(6)},${o.toFixed(6)}`,'_blank')};
+$('dLink').onclick=async()=>{if(!cur||!S.towers.includes(cur)){toast('Save the tower first');return}const u=location.href.split('#')[0]+'#t='+cur.id;
+ try{if(navigator.share){await navigator.share({url:u,title:'Terraclast tower'});return}}catch(e){if(e.name==='AbortError')return}
+ try{await navigator.clipboard.writeText(u);toast('Link copied')}catch(e){prompt('Copy this link',u)}};
+function hashGo(){const m=location.hash.match(/t=([\w-]+)/);if(m)focusT(m[1])}addEventListener('hashchange',hashGo);
+// hub: spots directory
+function spots(){const ty=$('sT').value,ra=$('sR').value,me=S.set.me,c=map.getCenter();
+ let L2=S.resources.filter(r=>(!ty||r.res===ty||(ty==='star'&&r.star))&&(!ra||r.rarity===ra)).map(r=>({r,d:hav([c.lat,c.lng],cLL(r))})).sort((a,b)=>a.d-b.d);
+ $('sN').textContent=`${L2.length} spot(s), nearest to map center first`;
+ $('sL').innerHTML=L2.slice(0,40).map(({r,d},i)=>`<div class="trow"><span><span class="tag pill-${(r.res||'poi').toLowerCase()}">${(RES[r.res]||['⭐'])[0]} ${r.res||'Spot'}</span> ${r.rarity||''}${r.star?' ⭐':''}</span><small>${fmtKm(d)} away</small><button data-i="${S.resources.indexOf(r)}">Go</button></div>`).join('')||'<small>No tagged spots yet. Use 📍 Tag here while playing.</small>';
+ $('sL').querySelectorAll('button').forEach(b=>b.onclick=()=>{map.setView(cLL(S.resources[b.dataset.i]),16);hidePanelMobile()})}
+$('sT').onchange=$('sR').onchange=spots;
+// hub: ops board
+function ops(){const t=new Date().toISOString().slice(0,10),L2=S.ops.slice().sort((a,b)=>(a.date||'9').localeCompare(b.date||'9'));
+ $('oL').innerHTML=L2.map(o=>`<div class="box opc${o.date&&o.date<t?' past':''}"><div class="row" style="justify-content:space-between"><b>${{run:'🚗',target:'🎯',build:'🏗️',meet:'🔊'}[o.type]||'📌'} ${esc(o.title)}</b><small>${o.date||'any day'}</small></div>${o.note?`<small>${esc(o.note)}</small><br>`:''}<small>by ${esc(P(o.by).name)}</small> <button data-x="${o.id}" class="sm">✕</button></div>`).join('')||'<small>No ops yet. Add one below. Ops travel in Export and plan.json.</small>';
+ $('oL').querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>{S.ops=S.ops.filter(o=>o.id!==b.dataset.x);save();ops()})}
+$('oAdd').onclick=()=>{const title=$('oT').value.trim();if(!title){toast('Give the op a title');return}S.ops.push({id:uid(),title,type:$('oY').value,date:$('oD').value,note:$('oN').value.trim(),by:S.set.me||''});$('oT').value=$('oN').value='';save();ops();toast('Op added')};
+// keep ops in export/import
+const _e=exportObj;exportObj=function(){const o=_e();o.ops=S.ops;return o};
+const _i=importData;importData=function(d,m){const n=_i(d,m);if(Array.isArray(d.ops)){if(m==='replace')S.ops=d.ops.slice();else d.ops.forEach(o=>{if(!S.ops.some(x=>x.id===o.id))S.ops.push(o)})}
+ (d.players||[]).forEach(p=>{const ex=S.players.find(q=>q.id===p.id||q.name.toLowerCase()===String(p.name).toLowerCase());if(ex&&p.role&&(!ex.upd||(p.upd||'')>=ex.upd))ex.role=p.role});return n};
+// auto-load shared plan.json: only adds new stuff, never overwrites your own edits
+async function autoPlan(){try{const r=await fetch('plan.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const txt=await r.text();
+ let h=0;for(let i=0;i<txt.length;i++)h=(h*31+txt.charCodeAt(i))|0;if(S.set.planHash===h)return;
+ const d=JSON.parse(txt),fix=t=>{t={...t};if(t.lat!=null)[t.q,t.r]=hexAt(t.lat,t.lng);delete t.lat;delete t.lng;return t};
+ const idMap={};let np=0,nt=0;(d.players||[]).forEach(p=>{const ex=S.players.find(q=>q.id===p.id||q.name.toLowerCase()===String(p.name).toLowerCase());
+  if(ex){idMap[p.id]=ex.id;if(!ex.upd&&['Jacob','Wife'].includes(ex.name)&&p.name)ex.name=p.name;if(p.upd&&(!ex.upd||p.upd>ex.upd)){if(p.inc)ex.inc=p.inc;if(p.role)ex.role=p.role;ex.upd=p.upd}}else{S.players.push({...p,show:true});idMap[p.id]=p.id;np++}});
+ const seen=new Set(S.set.planSeen||[]);
+ (d.towers||[]).forEach(t=>{if(S.towers.some(x=>x.id===t.id)||seen.has(t.id))return;S.towers.push(fix({...t,owner:idMap[t.owner]||t.owner}));nt++});
+ (d.resources||[]).forEach(x=>{x=fix(x);if(!S.resources.some(y=>y.q===x.q&&y.r===x.r))S.resources.push(x)});
+ (d.ops||[]).forEach(o=>{if(!S.ops.some(x=>x.id===o.id)&&!seen.has('op:'+o.id))S.ops.push(o)});
+ S.set.planSeen=[...new Set([...seen,...(d.towers||[]).map(t=>t.id),...(d.ops||[]).map(o=>'op:'+o.id)])];S.set.planHash=h;S.set.planAt=d.exported||'';save();render();
+ if(nt||np)toast(`Alliance plan loaded: +${nt} tower(s)${np?', +'+np+' player(s)':''}`)}catch(e){console.warn('plan.json',e)}}
+const _r=render;render=function(){_r.apply(this,arguments);try{legend();incEd();renderBoard();spots();ops();$('hPlan').textContent=S.set.planAt?'Alliance plan.json from '+new Date(S.set.planAt).toLocaleString():'No shared plan.json loaded yet'}catch(e){console.error(e)}};
+render();autoPlan().then(hashGo);
+if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('sw.js').catch(()=>{});
 })();
 </script></body></html>

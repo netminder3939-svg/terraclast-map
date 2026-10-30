@@ -1,46 +1,32 @@
-# Terraclast Strategy Map
+# Terraclast Alliance Command (v7)
 
-A free, one-file map for planning Terraclast towers with your alliance (Rathdrum to Spokane).
-Everything is in `index.html`. There's no build step, no accounts and no keys.
+Free, static alliance map + hub for Terraclast. No server, no accounts. Runs on GitHub Pages.
+Live: https://netminder3939-svg.github.io/terraclast-map/ · Discord: https://discord.gg/yJyajnZdbb
 
-## Put it online with GitHub Pages (about 5 minutes)
-1. Sign in at github.com and click **New repository**. Name it `terraclast`, set it to **Public**, and click **Create**.
-2. Click **uploading an existing file**. Drag in `index.html`, `README.md` and `sample-plan.json`, then click **Commit changes**.
-3. Go to **Settings → Pages**. Under "Branch" pick **main** and **/ (root)**, then click **Save**.
-4. Wait about a minute. Your link is `https://YOUR-USERNAME.github.io/terraclast/`. Send it to the alliance.
-5. On a phone, open the link and use **Share → Add to Home Screen** so it works like an app.
+## Files (repo root)
+| File | What it is |
+|---|---|
+| `index.html` | The whole app (map, tools, board, hub). |
+| `plan.json` | The shared alliance plan. Everyone's map loads it automatically. |
+| `manifest.json`, `sw.js`, `icon-180/192/512.png` | Add to Home Screen + offline. |
+| `sample-plan.json` | Small example plan. |
 
-## Using it
-The **❓ Help** tab has the 5 steps. Turn on **Advanced** for the attack calculator, upkeep, resources, zones, upgrades and the log.
+## Tabs
+- **Map**: every player's towers as colored hexes with the level (gold border = Live). Legend top-left: tap a name to hide/show, tap **All players / Just me**.
+- **Tools**: upkeep check, Today's run, attack check, upgrade planner, ⚙️ Numbers (editable game numbers; yellow = estimates).
+- **Board**: pick who you are, see **My next thing**, and a card per player (green daily income, live/planned, total defense, next upgrade ETA, towers with ETA + attack/defense per level).
+- **Hub**: Discord, how to send your update, ops board (runs/targets/builds), resource-spot directory, game guide (official facts), install steps.
+- **Players**: names, colors, roles, green daily income.
+- Tower popup: 🧭 Maps (directions) and 🔗 Link (opens the map focused on that tower: `...#t=towerId`).
 
-## Sharing one plan with the alliance (no server)
-Each person's map is saved on their own phone. You have two ways to share:
-- **Simple:** go to **💾 Share → Export plan** and send the file in Discord. Others use **Merge import**, which adds your towers and keeps theirs.
-- **One shared plan.json in the repo:**
-  1. One person (the "map keeper") exports the plan, renames it `plan.json` and uploads it to the repo, replacing the old one.
-  2. Everyone goes to **Advanced → 💾 Share → Shared plan URL** and pastes
-     `https://YOUR-USERNAME.github.io/terraclast/plan.json`
-  3. The map merges that file every time it opens, and **🔄 Refresh** pulls it again.
-  4. To add towers to the shared plan, send your export to the map keeper. They merge it, export again and re-upload `plan.json`.
-  GitHub Pages can take a minute or two to update after an upload. A raw GitHub Gist URL works too.
+## How the shared plan works
+1. Each player enters their green income and plans or tags towers, then taps **📤 Send my update** and posts the file in Discord.
+2. Jacob opens his map, 💾 Share → **Merge import** each file, then Share → **Export plan**, renames it to `plan.json` and uploads it here, replacing the old one.
+3. Everyone's map checks `plan.json` on open. If it changed, it **adds** new towers, players, spots and ops and updates income that is newer. It never overwrites a tower you already have or edited, and it won't bring back towers you deleted.
 
-## Notes and limits
-- The hex grid is approximate (174 m edges). Line it up in **Map → Hex grid**.
-- Defense, upkeep and upgrade costs between L1 and L10 are estimates.
-- Routes use the free public OSRM demo server. If it's down, the map draws straight lines.
-  Google Maps links are split into legs of up to 10 stops. Apple Maps multi-stop links need iOS 16 or later; older versions may only show the first stop.
-- Upkeep notifications only fire while the page is open. Use the .ics calendar reminder for a daily alert.
-- Map tiles come from Esri, with a backup provider.
-- `sample-plan.json` is a small test plan. Load it with Merge import to try things out, and delete the towers afterward.
+## Install on iPhone
+Safari → Share → Add to Home Screen. Works offline after the first visit (map tiles you have viewed are cached).
 
-## Quick tag while you play
-- Tap **📍 Tag here**. The map finds the hex you're standing in (needs the https/GitHub Pages link and location permission). If location is off, it tags the hex in the middle of the map and tells you so.
-- One tap saves it: Wood, Food, Water, Scrap, POI, Enemy, or ⭐ good spot. Tap the same button again to remove it, or use 🧹 Clear.
-- Long-press any hex on the map (right-click on a computer) to tag that hex instead.
-- The map can't see inside Terraclast. You pick what's on the tile yourself. Tags go out with Export/Merge like everything else.
-
-## Pocket buddy (bottom-left buttons, no server needed)
-- **💬 Discord**: add your alliance Discord invite once (or in 💾 Share → Alliance Discord link). It's saved and included in Export/plan.json, so allies who Merge get the button too. It's greyed out until a link is set.
-- **⏱️ Timers**: shield/attack cooldown countdowns. Open from the button, or from a tile's Tag sheet or a tower's dialog (⏱️ Timer). The presets (15m to 24h) are guesses because exact game cooldowns aren't known, so use Custom minutes. Timers survive reloads. 📅 on a timer downloads a calendar alarm for its end time.
-- **🍖 Feed towers**: pick a daily time and tap Remind me. 📅 adds a daily repeating iPhone calendar alarm.
-- **Honest note:** toasts, vibration, sound and notifications only fire while the page is open. Use the 📅 calendar files if you want an alarm when it's closed.
+## Game numbers
+Official: tower build 10 wood; defense (= attack) 10 at L1 to 155 at L10; upkeep 1/1 at L1 to 12/8 at L10; base income +1/day at L1 to +6/day at L10.
+Estimates (edit in Tools → ⚙️ Numbers): every level between L1 and L10, and upgrade costs (10 wood + 10 scrap for L1→2, doubling each level).
