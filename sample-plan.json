@@ -1,1 +1,156 @@
-
+{
+ "app": "terraclast-map",
+ "v": 2,
+ "exported": "2026-10-29T19:17:34.953Z",
+ "players": [
+  {
+   "id": "p1",
+   "name": "Jacob",
+   "color": "#22c55e",
+   "show": true
+  },
+  {
+   "id": "p2",
+   "name": "Wife",
+   "color": "#ec4899",
+   "show": true
+  }
+ ],
+ "towers": [
+  {
+   "id": "mvtxdlwhx9nr",
+   "q": 73,
+   "r": -6,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 4,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.812666,
+   "lng": -116.895255
+  },
+  {
+   "id": "mvtxdmezrvxh",
+   "q": 72,
+   "r": -7,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.8086,
+   "lng": -116.898745
+  },
+  {
+   "id": "mvtxdmx06tqj",
+   "q": 74,
+   "r": -5,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Live",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.816731,
+   "lng": -116.891766
+  }
+ ],
+ "resources": [
+  {
+   "q": 73,
+   "r": -3,
+   "res": "Wood",
+   "rarity": "epic",
+   "lat": 47.820797,
+   "lng": -116.895255
+  }
+ ],
+ "zones": [
+  {
+   "id": "mvtxdsayhc4f",
+   "type": "Our turf",
+   "note": "",
+   "pts": [
+    [
+     47.820214893508044,
+     -116.9033718109131
+    ],
+    [
+     47.820214893508044,
+     -116.88998222351076
+    ],
+    [
+     47.811699096198424,
+     -116.88998222351076
+    ],
+    [
+     47.811699096198424,
+     -116.89667701721193
+    ]
+   ]
+  }
+ ],
+ "log": [
+  {
+   "id": "mvtxdq4ddlko",
+   "ts": "2026-10-29T19:17:29.341Z",
+   "action": "place",
+   "player": "",
+   "text": "Route built: 3 stops"
+  },
+  {
+   "id": "mvtxdpo3nw4p",
+   "ts": "2026-10-29T19:17:28.755Z",
+   "action": "build",
+   "player": "p1",
+   "text": "L1 tower (route stop 1)"
+  },
+  {
+   "id": "mvtxdpdngmhw",
+   "ts": "2026-10-29T19:17:28.379Z",
+   "action": "place",
+   "player": "",
+   "text": "Route built: 3 stops"
+  },
+  {
+   "id": "mvtxdn5soggt",
+   "ts": "2026-10-29T19:17:25.504Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvtxdmnronrl",
+   "ts": "2026-10-29T19:17:24.855Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvtxdm58addw",
+   "ts": "2026-10-29T19:17:24.188Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  }
+ ],
+ "grid": {
+  "edge": 174,
+  "dx": 0,
+  "dy": 0,
+  "rot": 0,
+  "or": "flat",
+  "show": true
+ }
+}
