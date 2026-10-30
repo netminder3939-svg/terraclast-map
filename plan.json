@@ -1,0 +1,875 @@
+{
+ "app": "terraclast-map",
+ "v": 2,
+ "exported": "2026-10-30T01:29:33.943Z",
+ "players": [
+  {
+   "id": "p1",
+   "name": "Jacob",
+   "color": "#22c55e",
+   "show": true
+  },
+  {
+   "id": "p2",
+   "name": "Wife",
+   "color": "#ec4899",
+   "show": true
+  },
+  {
+   "id": "pmvu0zwqbauzt",
+   "name": "Toni",
+   "color": "#5c1357",
+   "show": true
+  },
+  {
+   "id": "pmvu101nuq8jk",
+   "name": "Adam",
+   "color": "#78bdd4",
+   "show": true
+  }
+ ],
+ "towers": [
+  {
+   "id": "mvu00drsxu5g",
+   "q": 79,
+   "r": -16,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Live",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.793693,
+   "lng": -116.874317
+  },
+  {
+   "id": "mvu06ypkftzj",
+   "q": 72,
+   "r": -6,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Live",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.81131,
+   "lng": -116.898745
+  },
+  {
+   "id": "mvu0q5qg9zwz",
+   "q": 90,
+   "r": -13,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Live",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.816731,
+   "lng": -116.835931
+  },
+  {
+   "id": "mvu0uv6b6qf6",
+   "q": -15,
+   "r": -3,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.701541,
+   "lng": -117.202345
+  },
+  {
+   "id": "mvu0v7be3k0w",
+   "q": -28,
+   "r": 11,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.721869,
+   "lng": -117.24771
+  },
+  {
+   "id": "mvu0very3p96",
+   "q": -57,
+   "r": 23,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.715093,
+   "lng": -117.34891
+  },
+  {
+   "id": "mvu0w6czfji1",
+   "q": 23,
+   "r": -14,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.723224,
+   "lng": -117.069738
+  },
+  {
+   "id": "mvu0wa1v5dp0",
+   "q": 43,
+   "r": -13,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.753038,
+   "lng": -116.999945
+  },
+  {
+   "id": "mvu0wewbcsae",
+   "q": 63,
+   "r": -8,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.793693,
+   "lng": -116.930152
+  },
+  {
+   "id": "mvu0y2rqz0sf",
+   "q": 80,
+   "r": -1,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Planned",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.835704,
+   "lng": -116.870828
+  },
+  {
+   "id": "mvu13dcrth56",
+   "q": 89,
+   "r": -18,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 1,
+   "status": "Live",
+   "note": "",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.801824,
+   "lng": -116.839421
+  },
+  {
+   "id": "sugt00000000",
+   "q": 77,
+   "r": -6,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 3,
+   "status": "Planned",
+   "note": "Suggested: scrap, commercial - Westwood Storage Center, food nearby at McDonald's (116 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.818086,
+   "lng": -116.881297
+  },
+  {
+   "id": "sugt00000001",
+   "q": 76,
+   "r": -11,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 3,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - Rathdrum City Meter Station, food nearby at Zip's Drive Inn (649 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.803179,
+   "lng": -116.884786
+  },
+  {
+   "id": "sugt00000002",
+   "q": 51,
+   "r": -30,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 3,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - industrial area, water nearby at pond/lake (391 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.717803,
+   "lng": -116.972028
+  },
+  {
+   "id": "sugt00000003",
+   "q": 63,
+   "r": -40,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 3,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - industrial area, food nearby at Fu-Ki Post Falls (408 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.706962,
+   "lng": -116.930152
+  },
+  {
+   "id": "sugt00000004",
+   "q": 35,
+   "r": -27,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 2,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - Sysco Spokane, food nearby at Panda Express (243 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.704252,
+   "lng": -117.027862
+  },
+  {
+   "id": "sugt00000005",
+   "q": -42,
+   "r": 2,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 2,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - industrial area, food nearby at The Sushi House (295 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.678503,
+   "lng": -117.296565
+  },
+  {
+   "id": "sugt00000006",
+   "q": 19,
+   "r": -29,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 2,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - industrial area, food nearby at San Francisco Sourdough Eatery (183 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.677148,
+   "lng": -117.083697
+  },
+  {
+   "id": "sugt00000007",
+   "q": 8,
+   "r": -29,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 2,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - industrial area, food nearby at Brother's Office Pizza (803 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.662241,
+   "lng": -117.122083
+  },
+  {
+   "id": "sugt00000008",
+   "q": -5,
+   "r": -25,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 2,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - industrial area, food nearby at Dodos at the High Spot (282 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.655465,
+   "lng": -117.167448
+  },
+  {
+   "id": "sugt00000009",
+   "q": -29,
+   "r": -13,
+   "owner": "p1",
+   "level": 1,
+   "tlevel": 2,
+   "status": "Planned",
+   "note": "Suggested: scrap, industrial - Charles H. Fleck Spokane Valley Service Center, food nearby at Market Street Pizzaria (144 m)",
+   "kind": "tower",
+   "target": false,
+   "attacker": "",
+   "expiry": "",
+   "lat": 47.655465,
+   "lng": -117.2512
+  }
+ ],
+ "resources": [
+  {
+   "q": 72,
+   "r": -6,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.81131,
+   "lng": -116.898745
+  },
+  {
+   "q": 72,
+   "r": -7,
+   "rarity": "common",
+   "res": "Water",
+   "lat": 47.8086,
+   "lng": -116.898745
+  },
+  {
+   "q": 73,
+   "r": -7,
+   "rarity": "common",
+   "res": "Water",
+   "lat": 47.809955,
+   "lng": -116.895255
+  },
+  {
+   "q": 74,
+   "r": -7,
+   "rarity": "common",
+   "res": "Scrap",
+   "star": false,
+   "lat": 47.81131,
+   "lng": -116.891766
+  },
+  {
+   "q": 73,
+   "r": -8,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.807245,
+   "lng": -116.895255
+  },
+  {
+   "q": 74,
+   "r": -8,
+   "rarity": "common",
+   "res": "Wood",
+   "star": false,
+   "lat": 47.8086,
+   "lng": -116.891766
+  },
+  {
+   "q": 75,
+   "r": -9,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.807245,
+   "lng": -116.888276
+  },
+  {
+   "q": 71,
+   "r": -7,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.807245,
+   "lng": -116.902235
+  },
+  {
+   "q": 75,
+   "r": -7,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.812666,
+   "lng": -116.888276
+  },
+  {
+   "q": 76,
+   "r": -7,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.814021,
+   "lng": -116.884786
+  },
+  {
+   "q": 76,
+   "r": -8,
+   "rarity": "common",
+   "res": "Food",
+   "lat": 47.81131,
+   "lng": -116.884786
+  },
+  {
+   "q": 76,
+   "r": -9,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.8086,
+   "lng": -116.884786
+  },
+  {
+   "q": 77,
+   "r": -9,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.809955,
+   "lng": -116.881297
+  },
+  {
+   "q": 78,
+   "r": -9,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.81131,
+   "lng": -116.877807
+  },
+  {
+   "q": 79,
+   "r": -10,
+   "rarity": "common",
+   "res": "Food",
+   "lat": 47.809955,
+   "lng": -116.874317
+  },
+  {
+   "q": 79,
+   "r": -8,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.815376,
+   "lng": -116.874317
+  },
+  {
+   "q": 73,
+   "r": -11,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.799114,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -12,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.796404,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -14,
+   "rarity": "common",
+   "res": "Food",
+   "lat": 47.790983,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -16,
+   "rarity": "common",
+   "res": "Food",
+   "lat": 47.785562,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -17,
+   "rarity": "common",
+   "res": "Water",
+   "lat": 47.782852,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -20,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.774721,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -21,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.77201,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -23,
+   "rarity": "common",
+   "res": "Food",
+   "lat": 47.76659,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -25,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.761169,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -27,
+   "rarity": "common",
+   "res": "Water",
+   "lat": 47.755748,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -28,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.753038,
+   "lng": -116.895255
+  },
+  {
+   "q": 73,
+   "r": -29,
+   "rarity": "common",
+   "res": "Scrap",
+   "lat": 47.750328,
+   "lng": -116.895255
+  },
+  {
+   "q": 72,
+   "r": -29,
+   "rarity": "common",
+   "res": "Wood",
+   "lat": 47.748972,
+   "lng": -116.898745
+  },
+  {
+   "q": 77,
+   "r": -6,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.818086,
+   "lng": -116.881297
+  },
+  {
+   "q": 74,
+   "r": -3,
+   "res": "Water",
+   "rarity": "",
+   "lat": 47.822152,
+   "lng": -116.891766
+  },
+  {
+   "q": 76,
+   "r": -11,
+   "res": "Scrap",
+   "rarity": "",
+   "lat": 47.803179,
+   "lng": -116.884786
+  },
+  {
+   "q": 74,
+   "r": -10,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.803179,
+   "lng": -116.891766
+  },
+  {
+   "q": 51,
+   "r": -30,
+   "res": "Scrap",
+   "rarity": "",
+   "lat": 47.717803,
+   "lng": -116.972028
+  },
+  {
+   "q": 51,
+   "r": -31,
+   "res": "Water",
+   "rarity": "",
+   "lat": 47.715093,
+   "lng": -116.972028
+  },
+  {
+   "q": 63,
+   "r": -40,
+   "res": "Scrap",
+   "rarity": "",
+   "lat": 47.706962,
+   "lng": -116.930152
+  },
+  {
+   "q": 64,
+   "r": -39,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.711028,
+   "lng": -116.926662
+  },
+  {
+   "q": 35,
+   "r": -27,
+   "res": "Scrap",
+   "rarity": "",
+   "lat": 47.704252,
+   "lng": -117.027862
+  },
+  {
+   "q": 35,
+   "r": -28,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.701541,
+   "lng": -117.027862
+  },
+  {
+   "q": -42,
+   "r": 2,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.678503,
+   "lng": -117.296565
+  },
+  {
+   "q": 19,
+   "r": -29,
+   "res": "Scrap",
+   "rarity": "",
+   "lat": 47.677148,
+   "lng": -117.083697
+  },
+  {
+   "q": 18,
+   "r": -28,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.678503,
+   "lng": -117.087186
+  },
+  {
+   "q": 17,
+   "r": -30,
+   "res": "Water",
+   "rarity": "",
+   "lat": 47.671728,
+   "lng": -117.090676
+  },
+  {
+   "q": 8,
+   "r": -29,
+   "res": "Scrap",
+   "rarity": "",
+   "lat": 47.662241,
+   "lng": -117.122083
+  },
+  {
+   "q": 10,
+   "r": -28,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.667662,
+   "lng": -117.115103
+  },
+  {
+   "q": -5,
+   "r": -25,
+   "res": "Scrap",
+   "rarity": "",
+   "lat": 47.655465,
+   "lng": -117.167448
+  },
+  {
+   "q": -6,
+   "r": -24,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.656821,
+   "lng": -117.170938
+  },
+  {
+   "q": -6,
+   "r": -27,
+   "res": "Water",
+   "rarity": "",
+   "lat": 47.64869,
+   "lng": -117.170938
+  },
+  {
+   "q": -29,
+   "r": -13,
+   "res": "Food",
+   "rarity": "",
+   "lat": 47.655465,
+   "lng": -117.2512
+  }
+ ],
+ "zones": [],
+ "log": [
+  {
+   "id": "sugl0001",
+   "ts": "2026-10-30T01:30:00.000Z",
+   "action": "place",
+   "player": "",
+   "text": "Suggested tower plan imported (10 towers)"
+  },
+  {
+   "id": "mvu13fis4ziq",
+   "ts": "2026-10-29T21:01:27.508Z",
+   "action": "build",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0ypqzt1uh",
+   "ts": "2026-10-29T20:57:47.483Z",
+   "action": "place",
+   "player": "",
+   "text": "Route built: 7 stops"
+  },
+  {
+   "id": "mvu0y3vy1tdl",
+   "ts": "2026-10-29T20:57:19.150Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0xgo7o7w3",
+   "ts": "2026-10-29T20:56:49.063Z",
+   "action": "build",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0wfv69cfk",
+   "ts": "2026-10-29T20:56:01.362Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0wap2bqcf",
+   "ts": "2026-10-29T20:55:54.662Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0w7aqksu2",
+   "ts": "2026-10-29T20:55:50.258Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0vfxedyvy",
+   "ts": "2026-10-29T20:55:14.786Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0v8gtlbcp",
+   "ts": "2026-10-29T20:55:05.117Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0uykavevh",
+   "ts": "2026-10-29T20:54:52.282Z",
+   "action": "place",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0q8od8kgn",
+   "ts": "2026-10-29T20:51:12.109Z",
+   "action": "build",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu0712talj7",
+   "ts": "2026-10-29T20:36:15.797Z",
+   "action": "build",
+   "player": "p1",
+   "text": "L1 tower"
+  },
+  {
+   "id": "mvu00n03shm2",
+   "ts": "2026-10-29T20:31:17.619Z",
+   "action": "build",
+   "player": "p1",
+   "text": "L1 tower"
+  }
+ ],
+ "grid": {
+  "edge": 174,
+  "dx": 0,
+  "dy": 0,
+  "rot": 0,
+  "or": "flat",
+  "show": true
+ },
+ "discord": ""
+}
